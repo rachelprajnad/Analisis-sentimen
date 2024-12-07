@@ -18,6 +18,12 @@ from sklearn.metrics import classification_report, confusion_matrix, ConfusionMa
 from sklearn.feature_extraction.text import TfidfVectorizer
 from imblearn.over_sampling import SMOTE
 from wordcloud import WordCloud
+import spacy
+from spacy.cli import download
+
+# Download dan instal model
+download("en_core_web_sm")
+
 
 # Pastikan resource NLTK dan SpaCy sudah terinstal
 nltk.download('stopwords')
