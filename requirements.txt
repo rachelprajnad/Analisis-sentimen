@@ -9,4 +9,4 @@ scikit-learn
 imblearn
 wordcloud
 spacy==3.8.2
-en-core-web-sm==3.12.0
+en-core-web-sm==3.8.0
