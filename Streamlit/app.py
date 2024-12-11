@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+#import spacy
+import spacy
 import matplotlib.pyplot as plt
 from google_play_scraper import Sort, reviews
 import nltk
@@ -22,6 +24,10 @@ from wordcloud import WordCloud
 # Pastikan resource NLTK dan SpaCy sudah terinstal
 nltk.download('stopwords')
 nltk.download('punkt')
+
+#bahasa spacy
+nlp = spacy.load("en_core_web_sm")
+
 
 # Inisialisasi model SpaCy dan utilitas lainnya
 nlp = spacy.load("en_core_web_sm")
