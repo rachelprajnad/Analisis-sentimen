@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 #import spacy
 import spacy
+from spacy.util import get_package_path
+
 import matplotlib.pyplot as plt
 from google_play_scraper import Sort, reviews
 import nltk
@@ -25,9 +27,12 @@ from wordcloud import WordCloud
 nltk.download('stopwords')
 nltk.download('punkt')
 
-#bahasa spacy
-nlp = spacy.load("en_core_web_sm")
+# Mendapatkan path model
+model_path = get_package_path("en_core_web_sm")
 
+# Memuat model menggunakan path absolut
+nlp = spacy.load(model_path)
+print("Model berhasil dimuat!")
 
 # Inisialisasi model SpaCy dan utilitas lainnya
 nlp = spacy.load("en_core_web_sm")
