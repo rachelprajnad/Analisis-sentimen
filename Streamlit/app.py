@@ -13,6 +13,21 @@ from google_play_scraper import reviews, Sort
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
+import spacy
+from spacy.cli import download
+
+# Unduh model jika belum ada
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+else:
+    nlp = spacy.load("en_core_web_sm")
+
+# Gunakan nlp seperti biasa
+
+
 # Pastikan resource NLTK dan SpaCy sudah terinstal
 nltk.download('stopwords')
 nltk.download('punkt')
