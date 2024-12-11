@@ -27,12 +27,14 @@ from wordcloud import WordCloud
 nltk.download('stopwords')
 nltk.download('punkt')
 
-# Mendapatkan path model
-model_path = get_package_path("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except IOError:
+    print("Model en_core_web_sm tidak ditemukan. Mengunduh model...")
+    import subprocess
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
-# Memuat model menggunakan path absolut
-nlp = spacy.load(model_path)
-print("Model berhasil dimuat!")
 
 # Inisialisasi model SpaCy dan utilitas lainnya
 nlp = spacy.load("en_core_web_sm")
