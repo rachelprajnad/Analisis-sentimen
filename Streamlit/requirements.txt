@@ -9,3 +9,7 @@ scikit-learn
 imblearn
 wordcloud
 spacy
+
+
+spacy
+en-core-web-sm
