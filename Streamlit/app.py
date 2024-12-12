@@ -12,6 +12,8 @@ import seaborn as sns
 from google_play_scraper import reviews, Sort
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import google_play_scraper
+print(google_play_scraper.__version__)
 
 
 
